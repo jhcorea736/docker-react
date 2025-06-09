@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - dokcer build -t jhcorea/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run jhcorea/docker-react npm run test
